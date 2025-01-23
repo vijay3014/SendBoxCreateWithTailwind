@@ -1,0 +1,75 @@
+/* Initial navbar background color */
+#navbar {
+    background-color: #fff8ee;
+    /* box-shadow: none; */
+}
+
+/* Navbar background color when scrolled */
+#navbar.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+ [id^='content-'] {
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+[id^='content-']:not(.hidden) {
+  max-height: 100px; /* Adjust based on your content size */
+}
+
+.underline-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-effect::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: #fab758; /* Color of the underline */
+  transition: width 0.3s ease-in-out; /* Smooth transition for expanding and contracting underline */
+}
+
+.underline-effect:hover::after {
+  width: 100%; /* Underline expands to full width on hover */
+}
+
+input[type="checkbox"]:checked + div > div {
+  transform: translateX(100%);
+}
+
+input[type="checkbox"]:checked + div > div > div {
+  transform: translateX(100%);
+}
+
+@media (min-width: 1024px) {
+  .lg\:block {
+      display: block;
+  }
+  .sm\:inline {
+      display: inline;
+  }
+  .md\:block {
+      display: block;
+  }
+}
+
+/* For small screens (sm), use inline to keep the address on one line */
+@media (max-width: 639px) {
+  .sm\:inline {
+      display: inline;
+  }
+}
+
+/* For medium screens (md), break the address into 2 parts per line */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .md\:block {
+      display: block;
+  }
+}
